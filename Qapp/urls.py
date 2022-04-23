@@ -1,0 +1,12 @@
+from django.contrib import admin
+from . import views
+from django.urls import path, include
+
+
+urlpatterns = [
+    path('index/<str:user>', views.index, name="index"),
+    path('<str:user>/<str:dfName>', views.work, name="work"),
+    path('signup/', views.signup, name="signup"),
+    path('', views.signin, name="signin"),
+
+]

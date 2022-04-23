@@ -1,0 +1,57 @@
+body{
+    background-color:rgb(227, 255, 209);
+}
+
+.general-info{
+    display: flex;
+    overflow-x: auto;
+}
+
+
+table{
+    overflow-y:auto;
+    overflow-x:auto;
+    height:400px;
+    display:block;
+ }
+
+ .table::-webkit-scrollbar-track
+{
+	
+
+	background-color: #f5f5f5;
+}
+
+ .table::-webkit-scrollbar
+{
+	
+	background-color: rgb(221, 221, 221);
+}
+
+ .table::-webkit-scrollbar-thumb
+{
+
+  border-radius: 1%;
+	background-color: #ff98ff;
+}
+
+
+.general-info::-webkit-scrollbar-track
+{
+	
+
+	background-color: #f5f5f5;
+}
+
+ .general-info::-webkit-scrollbar
+{
+	
+	background-color: rgb(221, 221, 221);
+}
+
+ .general-info::-webkit-scrollbar-thumb
+{
+
+  border-radius: 1%;
+	background-color: #6ef823;
+}
