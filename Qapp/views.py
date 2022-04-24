@@ -145,3 +145,6 @@ def work(request,user,dfName):
             
 
     return render(request,'work.html',context)
+
+def work2(request):
+    return render(request,'work2.html')    
