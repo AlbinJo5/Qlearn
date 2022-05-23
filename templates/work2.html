@@ -13,25 +13,71 @@
 
     <title>Work2</title>
   </head>
-  <body>
+  <script>
+    function spanfunction()
+  {
+    setTimeout(() => {
+    let block1 = document.getElementById("block1span").innerText;  
+    let block2 = document.getElementById("block2span").innerText;  
+    let block3 = document.getElementById("block3span").innerText;  
+    let block4 = document.getElementById("block4span").innerText;
+    // console.log(block1)
+    // console.log(block2)
+    // console.log(block3)
+    // console.log(block4)
+
+
+    if (block1=='Pandas'){
+      block1NumpyFunctions.style.display="none";
+      block1MatplotlibFunctions.style.display="none";
+      block1PandasFunctions.style.display="block";
+    }
+    else if(block1=='Numpy'){
+      block1NumpyFunctions.style.display="block";
+      block1MatplotlibFunctions.style.display="none";
+      block1PandasFunctions.style.display="none";
+    }
+    else{
+      block1NumpyFunctions.style.display="none";
+      block1MatplotlibFunctions.style.display="block";
+      block1PandasFunctions.style.display="none";
+    }
+
+
+    }, 300);
+    var block1PandasFunctions = document.getElementById("block1PandasFunctions")
+    var block1NumpyFunctions = document.getElementById("block1NumpyFunctions")
+    var block1MatplotlibFunctions = document.getElementById("block1MatplotlibFunctions")
+    block1NumpyFunctions.style.display="none";
+    block1MatplotlibFunctions.style.display="none";
+  }
+  
+  </script>
+  <body onLoad="spanfunction()">
     <div class="df-text">
         <h4>Data Frame:- <span style="font-size: larger;">LOAN</span></h4>
     </div>
+    <form method="POST">
+      {% csrf_token %}
     <div class="card ">
         <div class="card-body">
             <div class="container">
                   <div class="dropdown">
                     <div class="select">
-                      <span>Pandas</span>
+                      <span id="block1span" >{% if block1span %}
+                        {{ block1span }}
+                    {% else %}
+                        Pandas
+                    {% endif %}</span>
                       <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="gender">
+                    <input type="hidden" name="block1" value="Pandas" onChange="spanfunction()">
                     <ul class="dropdown-menu">
-                      <li id="male">Pandas</li>
-                      <li id="female">Numpy </li>
-                      <li id="female">Matplotlib </li>
-                      <li id="female">Seaborn  </li>
-                      <li id="female">Sklearn </li>
+                      <li id="Pandas" onClick="spanfunction()">Pandas</li>
+                      <li id="Numpy" onClick="spanfunction()">Numpy </li>
+                      <li id="Matplotlib" onClick="spanfunction()">Matplotlib </li>
+                      <li id="Seaborn" onClick="spanfunction()">Seaborn  </li>
+                      <li id="Sklearn" onClick="spanfunction()">Sklearn </li>
                     </ul>
                   </div>
               
@@ -39,23 +85,60 @@
             <div style="display: flex;">
 
             
-            <div class="small-container" >
+            <div class="small-container" id="block1PandasFunctions">
                 <div class="dropdown" style="font-size:13px;width: 150px;">
                   <div class="select">
-                    <span>Select Function</span>
+                    <span>Panda Function</span>
                     <i class="fa fa-chevron-left"></i>
                   </div>
-                  <input type="hidden" name="gender">
+                  <input type="hidden" name="block1PandasFunctions" value="Head">
                   <ul class="dropdown-menu">
-                    <li id="male">fun1</li>
-                    <li id="female">fun2</li>
+                    <li id="Head">Head</li>
+                    <li id="Tail">Tail</li>
+                    <li id="Index">Index</li>
+                    <li id="Info">Info</li>
+                    <li id="Describe">Describe</li>
                   </ul>
                 </div>
             
           </div>
+          <div class="small-container" id="block1NumpyFunctions" >
+            <div class="dropdown" style="font-size:13px;width: 150px;">
+              <div class="select">
+                <span>Numpy Function</span>
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input type="hidden" name="block1NumpyFunctions" value="fun1">
+              <ul class="dropdown-menu">
+                <li id="male">fun1</li>
+                <li id="female">fun2</li>
+              </ul>
+            </div>
+        
+      </div>
+      <div class="small-container" id="block1MatplotlibFunctions" >
+        <div class="dropdown" style="font-size:13px;width: 150px;">
+          <div class="select">
+            <span>Matplotlib Function</span>
+            <i class="fa fa-chevron-left"></i>
+          </div>
+          <input type="hidden" name="block1MatplotlibFunctions" value="fun1">
+          <ul class="dropdown-menu">
+            <li id="male">fun1</li>
+            <li id="female">fun2</li>
+          </ul>
+        </div>
+    
+  </div>
           
         </div>
-          <p class="card-text" style="margin-left: 3%;">OUTPUT</p>
+          <p class="card-text" style="margin-left: 3%;">{% if block1Function == 'Head' %}
+            {{ block1 | safe }}
+        {% elif block1Function == 'Index' %}
+            {{ block1 }}
+        {% else %}
+          OUTPUT    
+        {% endif %}</p>
         
         </div>
       </div>
@@ -64,16 +147,20 @@
             <div class="container">
                   <div class="dropdown">
                     <div class="select">
-                      <span>Seaborn</span>
+                      <span id="block2span">{% if block2span %}
+                        {{ block2span }}
+                    {% else %}
+                    Seaborn
+                    {% endif %}</span>
                       <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="gender">
+                    <input type="hidden" name="block2" value="Seaborn">
                     <ul class="dropdown-menu">
-                      <li id="male">Pandas</li>
-                      <li id="female">Numpy </li>
-                      <li id="female">Matplotlib </li>
-                      <li id="female">Seaborn  </li>
-                      <li id="female">Sklearn </li>
+                      <li id="Pandas">Pandas</li>
+                      <li id="Numpy">Numpy </li>
+                      <li id="Matplotlib">Matplotlib </li>
+                      <li id="Seaborn">Seaborn  </li>
+                      <li id="Sklearn">Sklearn </li>
                     </ul>
                   </div>
               
@@ -124,7 +211,11 @@
     
   </div>
         </div>
-          <p class="card-text" style="margin-left: 3%;">OUTPUT</p>
+        <p class="card-text" style="margin-left: 3%;">{% if block2 %}
+          {{ block2 }}
+      {% else %}
+          OUTPUT
+      {% endif %}</p>
         
         </div>
       </div>
@@ -133,16 +224,20 @@
             <div class="container">
                   <div class="dropdown">
                     <div class="select">
-                      <span>Matplotlib</span>
+                      <span id="block3span">{% if block3span %}
+                        {{ block3span }}
+                    {% else %}
+                    Matplotlib
+                    {% endif %}</span>
                       <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="gender">
+                    <input type="hidden" name="block3" value="Matplotlib">
                     <ul class="dropdown-menu">
-                      <li id="male">Pandas</li>
-                      <li id="female">Numpy </li>
-                      <li id="female">Matplotlib </li>
-                      <li id="female">Seaborn  </li>
-                      <li id="female">Sklearn </li>
+                      <li id="Pandas">Pandas</li>
+                      <li id="Numpy">Numpy </li>
+                      <li id="Matplotlib">Matplotlib </li>
+                      <li id="Seaborn">Seaborn  </li>
+                      <li id="Sklearn">Sklearn </li>
                     </ul>
                   </div>
               
@@ -179,7 +274,11 @@
         
       </div>
         </div>
-          <p class="card-text" style="margin-left: 3%;">OUTPUT</p>
+        <p class="card-text" style="margin-left: 3%;">{% if block3 %}
+          {{ block3 }}
+      {% else %}
+          OUTPUT
+      {% endif %}</p>
         
         </div>
       </div>
@@ -188,16 +287,20 @@
             <div class="container">
                   <div class="dropdown">
                     <div class="select">
-                      <span>Numpy</span>
+                      <span id="block4span">{% if block4span %}
+                        {{ block4span }}
+                    {% else %}
+                    Numpy
+                    {% endif %}</span>
                       <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="gender">
+                    <input type="hidden" name="block4" value="Numpy">
                     <ul class="dropdown-menu">
-                      <li id="male">Pandas</li>
-                      <li id="female">Numpy </li>
-                      <li id="female">Matplotlib </li>
-                      <li id="female">Seaborn  </li>
-                      <li id="female">Sklearn </li>
+                      <li id="Pandas">Pandas</li>
+                      <li id="Numpy">Numpy </li>
+                      <li id="Matplotlib">Matplotlib </li>
+                      <li id="Seaborn">Seaborn  </li>
+                      <li id="Sklearn">Sklearn </li>
                     </ul>
                   </div>
               
@@ -221,13 +324,17 @@
           </div>
           
         </div>
-          <p class="card-text" style="margin-left: 3%;">OUTPUT</p>
+        <p class="card-text" style="margin-left: 3%;">{% if block4 %}
+          {{ block4 }}
+      {% else %}
+          OUTPUT
+      {% endif %}</p>
         
         </div>
       </div>
 
-      <button class="btn btn-success" style="margin: 5%; margin-left: 6%; width: 200px;">Submit</button>
-
+      <button class="btn btn-success" type="submit" style="margin: 5%; margin-left: 6%; width: 200px;">Submit</button>
+    </form>
       <div class="card text-center" id="sub-df" style="position: absolute; left:55%; top:7%; margin: 0; display: none; width: 550px;" >
         <div class="card-header">
           SUB DATA FRAME

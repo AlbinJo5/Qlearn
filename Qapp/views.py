@@ -58,6 +58,15 @@ def index(request,user):
             # "dataHead" : df1.Head,
             # "dataInfo" : df1.Info,
             # }
+            # ...........................................
+               # context = {
+                #     "dataframeName":dfName,
+                #     "username":user,
+                #     "dataFrame" : df1.Data,
+                #     "dataDescribe" : df1.Describe,
+                #     "dataHead" : df1.Head,
+                #     "dataInfo" : df1.Info,  
+                #     }
 
     
     return render(request,'index.html',context)
@@ -115,36 +124,55 @@ def signin(request):
     return render(request,'signIn.html')
 
 def work(request,user,dfName):
-        
-    
+
+    context={
+            
+        }
     userData = db.child("Work").child(user).get()
     for i in userData.each():
         url = i.val()
 
     df1 = Data_Frame(url)
-    df1.GeneralInfo(5)
            
-    context = {
-        "dataframeName":dfName,
-        "username":user,
-        "dataFrame" : df1.Data,
-        "dataDescribe" : df1.Describe,
-        "dataHead" : df1.Head,
-        "dataInfo" : df1.Info,  
-        }
+ 
 
     if request.method == 'POST':
-        cmd = request.POST.get('cmd')
-        if(cmd=="index"):
-            print(df1.Index)
-            context={
-                "index": df1.Index
-            }
-            return render(request,'work.html',context)
+
+        context={
+            
+        }
+
+        block1 = request.POST.get('block1')
+        block2 = request.POST.get('block2')
+        block3 = request.POST.get('block3')
+        block4 = request.POST.get('block4')
+
+        if block1 == 'Pandas':
+            function = request.POST.get('block1PandasFunctions')
+            if function == 'Head':
+                df1.Head()
+                context.update({'block1': df1.Head})
+                context.update({'block1Function': 'Head'})
+
+            elif function == 'Index':
+                df1.Index()
+                context.update({'block1': df1.Index})    
+                context.update({'block1Function': 'Index'})
+
+        
+        context.update({'block2': block2})
+        context.update({'block3': block3})
+        context.update({'block4': block4})
+        context.update({'block1span': block1})
+        context.update({'block2span': block2})
+        context.update({'block3span': block3})
+        context.update({'block4span': block4})
+        
+        return render(request,'work2.html',context)
     
             
 
-    return render(request,'work.html',context)
+    return render(request,'work2.html',context)
 
 def work2(request):
     return render(request,'work2.html')    

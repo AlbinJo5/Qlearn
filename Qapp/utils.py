@@ -16,3 +16,9 @@ class Data_Frame:
         self.Describe = self.data.describe().to_html(classes='table table-stripped')
         self.Head = self.data.head(headCount).to_html(classes='table table-stripped')
         self.Index = self.data.columns
+
+    def Head(self):
+        self.Head = self.data.head().to_html(classes='table table-stripped')  
+
+    def Index(self):
+        self.Index = self.data.columns
