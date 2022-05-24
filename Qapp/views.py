@@ -126,7 +126,7 @@ def signin(request):
 def work(request,user,dfName):
 
     context={
-            
+            'dfName':dfName
         }
     userData = db.child("Work").child(user).get()
     for i in userData.each():
@@ -139,7 +139,7 @@ def work(request,user,dfName):
     if request.method == 'POST':
 
         context={
-            
+            'dfName':dfName
         }
 
         block1 = request.POST.get('block1')

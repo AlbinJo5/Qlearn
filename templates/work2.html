@@ -1,351 +1,778 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="{% static 'css/work2.css' %}" rel="stylesheet" type="text/css" media="all" />
-    <link href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      href="{% static 'css/work2.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css"
+    />
 
     <title>Work2</title>
   </head>
   <script>
-    function spanfunction()
-  {
-    setTimeout(() => {
-    let block1 = document.getElementById("block1span").innerText;  
-    let block2 = document.getElementById("block2span").innerText;  
-    let block3 = document.getElementById("block3span").innerText;  
-    let block4 = document.getElementById("block4span").innerText;
-    // console.log(block1)
-    // console.log(block2)
-    // console.log(block3)
-    // console.log(block4)
-
-
-    if (block1=='Pandas'){
-      block1NumpyFunctions.style.display="none";
-      block1MatplotlibFunctions.style.display="none";
-      block1PandasFunctions.style.display="block";
+    function block1(){
+      setTimeout(() => {
+        let block1 = document.getElementById("block1span").innerText;
+        if (block1 == "Pandas") {
+          block1PandasFunctions.style.display = "block";
+          block1NumpyFunctions.style.display = "none";
+          block1MatplotlibFunctions.style.display = "none";
+          block1SeabornFunctions.style.display = "none";
+          block1SklearnFunctions.style.display = "none";
+        } else if (block1 == "Numpy") {
+          block1PandasFunctions.style.display = "none";
+          block1NumpyFunctions.style.display = "block";
+          block1MatplotlibFunctions.style.display = "none";
+          block1SeabornFunctions.style.display = "none";
+          block1SklearnFunctions.style.display = "none";
+        } else if (block1 == "Matplotlib") {
+          block1PandasFunctions.style.display = "none";
+          block1MatplotlibFunctions.style.display = "block";
+          block1NumpyFunctions.style.display = "none";
+          block1SeabornFunctions.style.display = "none";
+          block1SklearnFunctions.style.display = "none";
+        } else if (block1 == "Seaborn") {
+          block1PandasFunctions.style.display = "none";
+          block1SeabornFunctions.style.display = "block";
+          block1NumpyFunctions.style.display = "none";
+          block1MatplotlibFunctions.style.display = "none";
+          block1SklearnFunctions.style.display = "none";
+        } else {
+          block1PandasFunctions.style.display = "none";
+          block1SklearnFunctions.style.display = "block";
+          block1NumpyFunctions.style.display = "none";
+          block1MatplotlibFunctions.style.display = "none";
+          block1SeabornFunctions.style.display = "none";
+        }
+      }, 300);
+      var block1PandasFunctions = document.getElementById(
+        "block1PandasFunctions"
+      );
+      var block1NumpyFunctions = document.getElementById(
+        "block1NumpyFunctions"
+      );
+      var block1MatplotlibFunctions = document.getElementById(
+        "block1MatplotlibFunctions"
+      );
+      var block1SeabornFunctions = document.getElementById(
+        "block1SeabornFunctions"
+      );
+      var block1SklearnFunctions = document.getElementById(
+        "block1SklearnFunctions"
+      );
+      block1NumpyFunctions.style.display = "none";
+      block1MatplotlibFunctions.style.display = "none";
+      block1SeabornFunctions.style.display = "none";
+      block1SklearnFunctions.style.display = "none";
     }
-    else if(block1=='Numpy'){
-      block1NumpyFunctions.style.display="block";
-      block1MatplotlibFunctions.style.display="none";
-      block1PandasFunctions.style.display="none";
-    }
-    else{
-      block1NumpyFunctions.style.display="none";
-      block1MatplotlibFunctions.style.display="block";
-      block1PandasFunctions.style.display="none";
+
+    function block2(){
+      setTimeout(() => {
+        let block2 = document.getElementById("block2span").innerText;
+        if (block2 == "Pandas") {
+          block2PandasFunctions.style.display = "block";
+          block2NumpyFunctions.style.display = "none";
+          block2MatplotlibFunctions.style.display = "none";
+          block2SeabornFunctions.style.display = "none";
+          block2SklearnFunctions.style.display = "none";
+        } else if (block2 == "Numpy") {
+          block2PandasFunctions.style.display = "none";
+          block2NumpyFunctions.style.display = "block";
+          block2MatplotlibFunctions.style.display = "none";
+          block2SeabornFunctions.style.display = "none";
+          block2SklearnFunctions.style.display = "none";
+        } else if (block2 == "Matplotlib") {
+          block2PandasFunctions.style.display = "none";
+          block2MatplotlibFunctions.style.display = "block";
+          block2NumpyFunctions.style.display = "none";
+          block2SeabornFunctions.style.display = "none";
+          block2SklearnFunctions.style.display = "none";
+        } else if (block2 == "Seaborn") {
+          block2PandasFunctions.style.display = "none";
+          block2SeabornFunctions.style.display = "block";
+          block2NumpyFunctions.style.display = "none";
+          block2MatplotlibFunctions.style.display = "none";
+          block2SklearnFunctions.style.display = "none";
+        } else {
+          block2PandasFunctions.style.display = "none";
+          block2SklearnFunctions.style.display = "block";
+          block2NumpyFunctions.style.display = "none";
+          block2MatplotlibFunctions.style.display = "none";
+          block2SeabornFunctions.style.display = "none";
+        }
+      }, 300);
+      var block2PandasFunctions = document.getElementById(
+        "block2PandasFunctions"
+      );
+      var block2NumpyFunctions = document.getElementById(
+        "block2NumpyFunctions"
+      );
+      var block2MatplotlibFunctions = document.getElementById(
+        "block2MatplotlibFunctions"
+      );
+      var block2SeabornFunctions = document.getElementById(
+        "block2SeabornFunctions"
+      );
+      var block2SklearnFunctions = document.getElementById(
+        "block2SklearnFunctions"
+      );
+      block2NumpyFunctions.style.display = "none";
+      block2MatplotlibFunctions.style.display = "none";
+      block2PandasFunctions.style.display = "none";
+      block2SklearnFunctions.style.display = "none";
     }
 
+    function block3(){
+      setTimeout(() => {
+        let block3 = document.getElementById("block3span").innerText;
+        if (block3 == "Pandas") {
+          block3PandasFunctions.style.display = "block";
+          block3NumpyFunctions.style.display = "none";
+          block3MatplotlibFunctions.style.display = "none";
+          block3SeabornFunctions.style.display = "none";
+          block3SklearnFunctions.style.display = "none";
+        } else if (block3 == "Numpy") {
+          block3PandasFunctions.style.display = "none";
+          block3NumpyFunctions.style.display = "block";
+          block3MatplotlibFunctions.style.display = "none";
+          block3SeabornFunctions.style.display = "none";
+          block3SklearnFunctions.style.display = "none";
+        } else if (block3 == "Matplotlib") {
+          block3PandasFunctions.style.display = "none";
+          block3MatplotlibFunctions.style.display = "block";
+          block3NumpyFunctions.style.display = "none";
+          block3SeabornFunctions.style.display = "none";
+          block3SklearnFunctions.style.display = "none";
+        } else if (block3 == "Seaborn") {
+          block3PandasFunctions.style.display = "none";
+          block3SeabornFunctions.style.display = "block";
+          block3NumpyFunctions.style.display = "none";
+          block3MatplotlibFunctions.style.display = "none";
+          block3SklearnFunctions.style.display = "none";
+        } else {
+          block3PandasFunctions.style.display = "none";
+          block3SklearnFunctions.style.display = "block";
+          block3NumpyFunctions.style.display = "none";
+          block3MatplotlibFunctions.style.display = "none";
+          block3SeabornFunctions.style.display = "none";
+        }
+      }, 300);
+      var block3PandasFunctions = document.getElementById(
+        "block3PandasFunctions"
+      );
+      var block3NumpyFunctions = document.getElementById(
+        "block3NumpyFunctions"
+      );
+      var block3MatplotlibFunctions = document.getElementById(
+        "block3MatplotlibFunctions"
+      );
+      var block3SeabornFunctions = document.getElementById(
+        "block3SeabornFunctions"
+      );
+      var block3SklearnFunctions = document.getElementById(
+        "block3SklearnFunctions"
+      );
+      block3NumpyFunctions.style.display = "none";
+      block3PandasFunctions.style.display = "none";
+      block3SeabornFunctions.style.display = "none";
+      block3SklearnFunctions.style.display = "none";
+    }
 
-    }, 300);
-    var block1PandasFunctions = document.getElementById("block1PandasFunctions")
-    var block1NumpyFunctions = document.getElementById("block1NumpyFunctions")
-    var block1MatplotlibFunctions = document.getElementById("block1MatplotlibFunctions")
-    block1NumpyFunctions.style.display="none";
-    block1MatplotlibFunctions.style.display="none";
-  }
-  
+    function block4(){
+      setTimeout(() => {
+        let block4 = document.getElementById("block4span").innerText;
+        if (block4 == "Pandas") {
+          block4PandasFunctions.style.display = "block";
+          block4NumpyFunctions.style.display = "none";
+          block4MatplotlibFunctions.style.display = "none";
+          block4SeabornFunctions.style.display = "none";
+          block4SklearnFunctions.style.display = "none";
+        } else if (block4 == "Numpy") {
+          block4PandasFunctions.style.display = "none";
+          block4NumpyFunctions.style.display = "block";
+          block4MatplotlibFunctions.style.display = "none";
+          block4SeabornFunctions.style.display = "none";
+          block4SklearnFunctions.style.display = "none";
+        } else if (block4 == "Matplotlib") {
+          block4PandasFunctions.style.display = "none";
+          block4MatplotlibFunctions.style.display = "block";
+          block4NumpyFunctions.style.display = "none";
+          block4SeabornFunctions.style.display = "none";
+          block4SklearnFunctions.style.display = "none";
+        } else if (block4 == "Seaborn") {
+          block4PandasFunctions.style.display = "none";
+          block4SeabornFunctions.style.display = "block";
+          block4NumpyFunctions.style.display = "none";
+          block4MatplotlibFunctions.style.display = "none";
+          block4SklearnFunctions.style.display = "none";
+        } else {
+          block4PandasFunctions.style.display = "none";
+          block4SklearnFunctions.style.display = "block";
+          block4NumpyFunctions.style.display = "none";
+          block4MatplotlibFunctions.style.display = "none";
+          block4SeabornFunctions.style.display = "none";
+        }
+      }, 300);
+      var block4PandasFunctions = document.getElementById(
+        "block4PandasFunctions"
+      );
+      var block4NumpyFunctions = document.getElementById(
+        "block4NumpyFunctions"
+      );
+      var block4MatplotlibFunctions = document.getElementById(
+        "block4MatplotlibFunctions"
+      );
+      var block4SeabornFunctions = document.getElementById(
+        "block4SeabornFunctions"
+      );
+      var block4SklearnFunctions = document.getElementById(
+        "block4SklearnFunctions"
+      );
+      block4PandasFunctions.style.display = "none";
+      block4MatplotlibFunctions.style.display = "none";
+      block4SeabornFunctions.style.display = "none";
+      block4SklearnFunctions.style.display = "none";
+    }4
+
+
+    function spanfunction() {
+      block1();
+      block2();
+      block3();
+      block4();
+    }
   </script>
   <body onLoad="spanfunction()">
     <div class="df-text">
-        <h4>Data Frame:- <span style="font-size: larger;">LOAN</span></h4>
+      <h4>Data Frame:- <span style="font-size: larger">{{dfName}}</span></h4>
     </div>
     <form method="POST">
       {% csrf_token %}
-    <div class="card ">
+      <!-- BLOCK 1  -->
+      <div class="card">
         <div class="card-body">
-            <div class="container">
-                  <div class="dropdown">
-                    <div class="select">
-                      <span id="block1span" >{% if block1span %}
-                        {{ block1span }}
-                    {% else %}
-                        Pandas
-                    {% endif %}</span>
-                      <i class="fa fa-chevron-left"></i>
-                    </div>
-                    <input type="hidden" name="block1" value="Pandas" onChange="spanfunction()">
-                    <ul class="dropdown-menu">
-                      <li id="Pandas" onClick="spanfunction()">Pandas</li>
-                      <li id="Numpy" onClick="spanfunction()">Numpy </li>
-                      <li id="Matplotlib" onClick="spanfunction()">Matplotlib </li>
-                      <li id="Seaborn" onClick="spanfunction()">Seaborn  </li>
-                      <li id="Sklearn" onClick="spanfunction()">Sklearn </li>
-                    </ul>
-                  </div>
-              
+          <div class="container">
+            <div class="dropdown">
+              <div class="select">
+                <span id="block1span"
+                  >{% if block1span %} {{ block1span }} {% else %} Pandas {% endif %}</span
+                >
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input
+                type="hidden"
+                name="block1"
+                value="Pandas"
+                onChange="spanfunction()"
+              />
+              <ul class="dropdown-menu">
+                <li id="Pandas" onClick="block1()">Pandas</li>
+                <li id="Numpy" onClick="block1()">Numpy</li>
+                <li id="Matplotlib" onClick="block1()">Matplotlib</li>
+                <li id="Seaborn" onClick="block1()">Seaborn</li>
+                <li id="Sklearn" onClick="block1()">Sklearn</li>
+              </ul>
             </div>
-            <div style="display: flex;">
-
-            
-            <div class="small-container" id="block1PandasFunctions">
-                <div class="dropdown" style="font-size:13px;width: 150px;">
-                  <div class="select">
-                    <span>Panda Function</span>
-                    <i class="fa fa-chevron-left"></i>
-                  </div>
-                  <input type="hidden" name="block1PandasFunctions" value="Head">
-                  <ul class="dropdown-menu">
-                    <li id="Head">Head</li>
-                    <li id="Tail">Tail</li>
-                    <li id="Index">Index</li>
-                    <li id="Info">Info</li>
-                    <li id="Describe">Describe</li>
-                  </ul>
-                </div>
-            
           </div>
-          <div class="small-container" id="block1NumpyFunctions" >
-            <div class="dropdown" style="font-size:13px;width: 150px;">
+          <div style="display: flex">
+            <!-- BLOCK 1 FUNCTIONS -->
+            <div class="small-container" id="block1PandasFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Panda Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block1PandasFunctions"
+                  value="Head"
+                />
+                <ul class="dropdown-menu">
+                  <li id="Head">Head</li>
+                  <li id="Tail">Tail</li>
+                  <li id="Index">Index</li>
+                  <li id="Info">Info</li>
+                  <li id="Describe">Describe</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block1NumpyFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Numpy Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="block1NumpyFunctions" value="fun1" />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block1MatplotlibFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Matplotlib Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block1MatplotlibFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block1SeabornFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Seaborn Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block1SeabornFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block1SklearnFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Sklearn Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block1SklearnFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <!--############################# BLOCK 1 FUNCTIONS END #########################-->
+
+          </div>
+          <p class="card-text" style="margin-left: 3%">
+            {% if block1Function == 'Head' %} 
+              {{ block1 | safe }} 
+            {% elif block1Function == 'Index' %} 
+              {{ block1 }} 
+            {% else %} 
+              OUTPUT 
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& BLOCK 1 END &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+
+      <!-- BLOCK 2  -->
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <div class="dropdown">
+              <div class="select">
+                <span id="block2span"
+                  >{% if block2span %} {{ block2span }} {% else %} Seaborn {% endif %}</span
+                >
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input type="hidden" name="block2" value="Seaborn" />
+              <ul class="dropdown-menu">
+                <li id="Pandas" onClick="block2()">Pandas</li>
+                <li id="Numpy" onClick="block2()">Numpy</li>
+                <li id="Matplotlib" onClick="block2()">Matplotlib</li>
+                <li id="Seaborn" onClick="block2()">Seaborn</li>
+                <li id="Sklearn" onClick="block2()">Sklearn</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display: flex">
+            <!-- BLOCK 2 FUNCTIONS -->
+            <div class="small-container" id="block2PandasFunctions">
+            <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Panda Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block2PandasFunctions"
+                  value="Head"
+                />
+                <ul class="dropdown-menu">
+                  <li id="Head">Head</li>
+                  <li id="Tail">Tail</li>
+                  <li id="Index">Index</li>
+                  <li id="Info">Info</li>
+                  <li id="Describe">Describe</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block2NumpyFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Numpy Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="block2NumpyFunctions" value="fun1" />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block2MatplotlibFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Matplotlib Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block2MatplotlibFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block2SeabornFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Seaborn Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block2SeabornFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block2SklearnFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Sklearn Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block1SklearnFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <!--############################# BLOCK 2 FUNCTIONS END #########################-->
+          </div>
+          <p class="card-text" style="margin-left: 3%">
+            {% if block2 %} {{ block2 }} {% else %} OUTPUT {% endif %}
+          </p>
+        </div>
+      </div>
+      <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& BLOCK 2 END &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+
+      <!-- BLOCK 3  -->
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <div class="dropdown">
+              <div class="select">
+                <span id="block3span"
+                  >{% if block3span %} {{ block3span }} {% else %} Matplotlib {% endif %}</span
+                >
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input type="hidden" name="block3" value="Matplotlib" />
+              <ul class="dropdown-menu">
+                <li id="Pandas" onClick="block3()">Pandas</li>
+                <li id="Numpy" onClick="block3()">Numpy</li>
+                <li id="Matplotlib" onClick="block3()">Matplotlib</li>
+                <li id="Seaborn" onClick="block3()">Seaborn</li>
+                <li id="Sklearn" onClick="block3()">Sklearn</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display: flex">
+            <!-- BLOCK 3 FUNCTIONS -->
+            <div class="small-container" id="block3PandasFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Panda Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block3PandasFunctions"
+                  value="Head"
+                />
+                <ul class="dropdown-menu">
+                  <li id="Head">Head</li>
+                  <li id="Tail">Tail</li>
+                  <li id="Index">Index</li>
+                  <li id="Info">Info</li>
+                  <li id="Describe">Describe</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block3NumpyFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Numpy Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="block3NumpyFunctions" value="fun1" />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block3MatplotlibFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Matplotlib Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block3MatplotlibFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block3SeabornFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Seaborn Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block3SeabornFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <div class="small-container" id="block3SklearnFunctions">
+              <div class="dropdown" style="font-size: 13px; width: 150px">
+                <div class="select">
+                  <span>Sklearn Function</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input
+                  type="hidden"
+                  name="block3SklearnFunctions"
+                  value="fun1"
+                />
+                <ul class="dropdown-menu">
+                  <li id="male">fun1</li>
+                  <li id="female">fun2</li>
+                </ul>
+              </div>
+            </div>
+            <!--############################# BLOCK 3 FUNCTIONS END #########################-->
+          </div>
+          <p class="card-text" style="margin-left: 3%">
+            {% if block3 %} {{ block3 }} {% else %} OUTPUT {% endif %}
+          </p>
+        </div>
+      </div>
+      <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& BLOCK 3 END &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+
+      <!-- BLOCK 4  -->
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <div class="dropdown">
+              <div class="select">
+                <span id="block4span"
+                  >{% if block4span %} {{ block4span }} {% else %} Numpy {% endif %}</span
+                >
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input type="hidden" name="block4" value="Numpy" />
+              <ul class="dropdown-menu">
+                <li id="Pandas" onClick="block4()">Pandas</li>
+                <li id="Numpy" onClick="block4()">Numpy</li>
+                <li id="Matplotlib" onClick="block4()">Matplotlib</li>
+                <li id="Seaborn" onClick="block4()">Seaborn</li>
+                <li id="Sklearn" onClick="block4()">Sklearn</li>
+              </ul>
+            </div>
+          </div>
+          <div style="display: flex">
+           <!-- BLOCK 4 FUNCTIONS -->
+           <div class="small-container" id="block4PandasFunctions">
+            <div class="dropdown" style="font-size: 13px; width: 150px">
+              <div class="select">
+                <span>Panda Function</span>
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input
+                type="hidden"
+                name="block4PandasFunctions"
+                value="Head"
+              />
+              <ul class="dropdown-menu">
+                <li id="Head">Head</li>
+                <li id="Tail">Tail</li>
+                <li id="Index">Index</li>
+                <li id="Info">Info</li>
+                <li id="Describe">Describe</li>
+              </ul>
+            </div>
+          </div>
+          <div class="small-container" id="block4NumpyFunctions">
+            <div class="dropdown" style="font-size: 13px; width: 150px">
               <div class="select">
                 <span>Numpy Function</span>
                 <i class="fa fa-chevron-left"></i>
               </div>
-              <input type="hidden" name="block1NumpyFunctions" value="fun1">
+              <input type="hidden" name="block4NumpyFunctions" value="fun1" />
               <ul class="dropdown-menu">
                 <li id="male">fun1</li>
                 <li id="female">fun2</li>
               </ul>
             </div>
-        
-      </div>
-      <div class="small-container" id="block1MatplotlibFunctions" >
-        <div class="dropdown" style="font-size:13px;width: 150px;">
-          <div class="select">
-            <span>Matplotlib Function</span>
-            <i class="fa fa-chevron-left"></i>
           </div>
-          <input type="hidden" name="block1MatplotlibFunctions" value="fun1">
-          <ul class="dropdown-menu">
-            <li id="male">fun1</li>
-            <li id="female">fun2</li>
-          </ul>
-        </div>
-    
-  </div>
-          
-        </div>
-          <p class="card-text" style="margin-left: 3%;">{% if block1Function == 'Head' %}
-            {{ block1 | safe }}
-        {% elif block1Function == 'Index' %}
-            {{ block1 }}
-        {% else %}
-          OUTPUT    
-        {% endif %}</p>
-        
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body">
-            <div class="container">
-                  <div class="dropdown">
-                    <div class="select">
-                      <span id="block2span">{% if block2span %}
-                        {{ block2span }}
-                    {% else %}
-                    Seaborn
-                    {% endif %}</span>
-                      <i class="fa fa-chevron-left"></i>
-                    </div>
-                    <input type="hidden" name="block2" value="Seaborn">
-                    <ul class="dropdown-menu">
-                      <li id="Pandas">Pandas</li>
-                      <li id="Numpy">Numpy </li>
-                      <li id="Matplotlib">Matplotlib </li>
-                      <li id="Seaborn">Seaborn  </li>
-                      <li id="Sklearn">Sklearn </li>
-                    </ul>
-                  </div>
-              
-            </div>
-            <div style="display: flex;">
-
-            
-            <div class="small-container" >
-                <div class="dropdown" style="font-size:13px;width: 150px;">
-                  <div class="select">
-                    <span>Select Function</span>
-                    <i class="fa fa-chevron-left"></i>
-                  </div>
-                  <input type="hidden" name="gender">
-                  <ul class="dropdown-menu">
-                    <li id="male">fun1</li>
-                    <li id="female">fun2</li>
-                  </ul>
-                </div>
-            
-          </div>
-          <div class="small-container" >
-            <div class="dropdown" style="font-size:13px;width: 150px;">
+          <div class="small-container" id="block4MatplotlibFunctions">
+            <div class="dropdown" style="font-size: 13px; width: 150px">
               <div class="select">
-                <span>Coloumn 1</span>
+                <span>Matplotlib Function</span>
                 <i class="fa fa-chevron-left"></i>
               </div>
-              <input type="hidden" name="gender">
-              <ul class="dropdown-menu">
-                <li id="male">col1</li>
-                <li id="female">col2</li>
-              </ul>
-            </div>
-        
-      </div>
-      <div class="small-container" >
-        <div class="dropdown" style="font-size:13px;width: 150px;">
-          <div class="select">
-            <span>Coloumn 2</span>
-            <i class="fa fa-chevron-left"></i>
-          </div>
-          <input type="hidden" name="gender">
-          <ul class="dropdown-menu">
-            <li id="male">col1</li>
-            <li id="female">col2</li>
-          </ul>
-        </div>
-    
-  </div>
-        </div>
-        <p class="card-text" style="margin-left: 3%;">{% if block2 %}
-          {{ block2 }}
-      {% else %}
-          OUTPUT
-      {% endif %}</p>
-        
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body">
-            <div class="container">
-                  <div class="dropdown">
-                    <div class="select">
-                      <span id="block3span">{% if block3span %}
-                        {{ block3span }}
-                    {% else %}
-                    Matplotlib
-                    {% endif %}</span>
-                      <i class="fa fa-chevron-left"></i>
-                    </div>
-                    <input type="hidden" name="block3" value="Matplotlib">
-                    <ul class="dropdown-menu">
-                      <li id="Pandas">Pandas</li>
-                      <li id="Numpy">Numpy </li>
-                      <li id="Matplotlib">Matplotlib </li>
-                      <li id="Seaborn">Seaborn  </li>
-                      <li id="Sklearn">Sklearn </li>
-                    </ul>
-                  </div>
-              
-            </div>
-            <div style="display: flex;">
-
-            
-            <div class="small-container" >
-                <div class="dropdown" style="font-size:13px;width: 150px;">
-                  <div class="select">
-                    <span>Select Function</span>
-                    <i class="fa fa-chevron-left"></i>
-                  </div>
-                  <input type="hidden" name="gender">
-                  <ul class="dropdown-menu">
-                    <li id="male">fun1</li>
-                    <li id="female">fun2</li>
-                  </ul>
-                </div>
-            
-          </div>
-          <div class="small-container" >
-            <div class="dropdown" style="font-size:13px;width: 150px;">
-              <div class="select">
-                <span>Select Function</span>
-                <i class="fa fa-chevron-left"></i>
-              </div>
-              <input type="hidden" name="gender">
+              <input
+                type="hidden"
+                name="block4MatplotlibFunctions"
+                value="fun1"
+              />
               <ul class="dropdown-menu">
                 <li id="male">fun1</li>
                 <li id="female">fun2</li>
               </ul>
             </div>
-        
-      </div>
-        </div>
-        <p class="card-text" style="margin-left: 3%;">{% if block3 %}
-          {{ block3 }}
-      {% else %}
-          OUTPUT
-      {% endif %}</p>
-        
-        </div>
-      </div>
-      <div class="card ">
-        <div class="card-body">
-            <div class="container">
-                  <div class="dropdown">
-                    <div class="select">
-                      <span id="block4span">{% if block4span %}
-                        {{ block4span }}
-                    {% else %}
-                    Numpy
-                    {% endif %}</span>
-                      <i class="fa fa-chevron-left"></i>
-                    </div>
-                    <input type="hidden" name="block4" value="Numpy">
-                    <ul class="dropdown-menu">
-                      <li id="Pandas">Pandas</li>
-                      <li id="Numpy">Numpy </li>
-                      <li id="Matplotlib">Matplotlib </li>
-                      <li id="Seaborn">Seaborn  </li>
-                      <li id="Sklearn">Sklearn </li>
-                    </ul>
-                  </div>
-              
-            </div>
-            <div style="display: flex;">
-
-            
-            <div class="small-container" >
-                <div class="dropdown" style="font-size:13px;width: 150px;">
-                  <div class="select">
-                    <span>Select Function</span>
-                    <i class="fa fa-chevron-left"></i>
-                  </div>
-                  <input type="hidden" name="gender">
-                  <ul class="dropdown-menu">
-                    <li id="male">fun1</li>
-                    <li id="female">fun2</li>
-                  </ul>
-                </div>
-            
           </div>
-          
-        </div>
-        <p class="card-text" style="margin-left: 3%;">{% if block4 %}
-          {{ block4 }}
-      {% else %}
-          OUTPUT
-      {% endif %}</p>
-        
+          <div class="small-container" id="block4SeabornFunctions">
+            <div class="dropdown" style="font-size: 13px; width: 150px">
+              <div class="select">
+                <span>Seaborn Function</span>
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input
+                type="hidden"
+                name="block4SeabornFunctions"
+                value="fun1"
+              />
+              <ul class="dropdown-menu">
+                <li id="male">fun1</li>
+                <li id="female">fun2</li>
+              </ul>
+            </div>
+          </div>
+          <div class="small-container" id="block4SklearnFunctions">
+            <div class="dropdown" style="font-size: 13px; width: 150px">
+              <div class="select">
+                <span>Sklearn Function</span>
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input
+                type="hidden"
+                name="block4SklearnFunctions"
+                value="fun1"
+              />
+              <ul class="dropdown-menu">
+                <li id="male">fun1</li>
+                <li id="female">fun2</li>
+              </ul>
+            </div>
+          </div>
+          <!--############################# BLOCK 4 FUNCTIONS END #########################-->
+          </div>
+          <p class="card-text" style="margin-left: 3%">
+            {% if block4 %} {{ block4 }} {% else %} OUTPUT {% endif %}
+          </p>
         </div>
       </div>
+      <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& BLOCK 4 END &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
 
-      <button class="btn btn-success" type="submit" style="margin: 5%; margin-left: 6%; width: 200px;">Submit</button>
+      <button
+        class="btn btn-success"
+        type="submit"
+        style="margin: 5%; margin-left: 6%; width: 200px"
+      >
+        Submit
+      </button>
     </form>
-      <div class="card text-center" id="sub-df" style="position: absolute; left:55%; top:7%; margin: 0; display: none; width: 550px;" >
-        <div class="card-header">
-          SUB DATA FRAME
+    <div
+      class="card text-center"
+      id="sub-df"
+      style="
+        position: absolute;
+        left: 55%;
+        top: 7%;
+        margin: 0;
+        display: none;
+        width: 550px;
+      "
+    >
+      <div class="card-header">SUB DATA FRAME</div>
+      <div class="card-body">
+        <h5 class="card-title">Name the data frame</h5>
+        <div class="col-12">
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            placeholder="eg:- df2"
+          />
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Name the data frame</h5>
-          <div class="col-12">
-            <input type="text" class="form-control" id="inputAddress" placeholder="eg:- df2">
-          </div>
-          <h5 class="card-title" style="margin-top: 2%;">Conditions..</h5>
-          <div class="row g-3">
+        <h5 class="card-title" style="margin-top: 2%">Conditions..</h5>
+        <div class="row g-3">
           <div class="col-md-6">
             <label for="inputState" class="form-label">Coloumn </label>
             <select id="inputState" class="form-select">
@@ -355,24 +782,30 @@
           </div>
           <div class="col-md-4">
             <label for="inputCity" class="form-label">Value</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" class="form-control" id="inputCity" />
           </div>
         </div>
-        <button class="btn btn-primary" style="margin-top: 3%;"> New -></button>
-          
-          
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
+        <button class="btn btn-primary" style="margin-top: 3%">New -></button>
       </div>
-      <button class="btn btn-primary" style="position: absolute; left:83%; top:1%; margin: 0;" onclick="subDiv()">Sub Data Frame</button>
+      <div class="card-footer text-muted">2 days ago</div>
+    </div>
+    <button
+      class="btn btn-primary"
+      style="position: absolute; left: 83%; top: 1%; margin: 0"
+      onclick="subDiv()"
+    >
+      Sub Data Frame
+    </button>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="{% static 'js/work2.js' %}"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
