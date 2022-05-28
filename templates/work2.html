@@ -248,14 +248,61 @@
       block4MatplotlibFunctions.style.display = "none";
       block4SeabornFunctions.style.display = "none";
       block4SklearnFunctions.style.display = "none";
-    }4
+    }
 
+    function subFunctionHide(){
+      var block1PandasHeadFunction = document.getElementById("block1PandasHeadFunction");
+      var block1PandasTailFunction = document.getElementById("block1PandasTailFunction");
+      var block1PandasSampleFunction = document.getElementById("block1PandasSampleFunction");
+      var block1MatplotlibLinePlotFunction1 = document.getElementById("block1MatplotlibLinePlotFunction1");
+      var block1MatplotlibLinePlotFunction2 = document.getElementById("block1MatplotlibLinePlotFunction2");
+      var block1MatplotlibBarChartFunction1 = document.getElementById("block1MatplotlibBarChartFunction1");
+      var block1MatplotlibBarChartFunction2 = document.getElementById("block1MatplotlibBarChartFunction2");
+
+      block1PandasHeadFunction.style.display = "none"
+      block1PandasTailFunction.style.display = "none"
+      block1PandasSampleFunction.style.display = "none"
+      block1MatplotlibLinePlotFunction1.style.display = "none"
+      block1MatplotlibLinePlotFunction2.style.display = "none"
+      block1MatplotlibBarChartFunction1.style.display = "none"
+      block1MatplotlibBarChartFunction2.style.display = "none"
+    }
+
+    function block1PandasHeadFunctionShow(){
+      var block1PandasHeadFunction = document.getElementById("block1PandasHeadFunction");
+      block1PandasHeadFunction.style.display = "block"
+    }
+    function block1PandasTailFunctionShow(){
+      var block1PandasTailFunction = document.getElementById("block1PandasTailFunction");
+      block1PandasTailFunction.style.display = "block"
+    }
+    function block1PandasSampleFunctionShow(){
+      var block1PandasSampleFunction = document.getElementById("block1PandasSampleFunction");
+      block1PandasSampleFunction.style.display = "block"
+    }
+
+    function block1MatplotlibLinePlotFunction1Show(){
+      var block1MatplotlibLinePlotFunction1 = document.getElementById("block1MatplotlibLinePlotFunction1");
+      block1MatplotlibLinePlotFunction1.style.display = "block"
+    }
+    function block1MatplotlibLinePlotFunction2Show(){
+      var block1MatplotlibLinePlotFunction2 = document.getElementById("block1MatplotlibLinePlotFunction2");
+      block1MatplotlibLinePlotFunction2.style.display = "block"
+    }
+    function block1MatplotlibBarChartFunctionShow(){
+      var block1MatplotlibBarChartFunction1 = document.getElementById("block1MatplotlibBarChartFunction1");
+      var block1MatplotlibBarChartFunction2 = document.getElementById("block1MatplotlibBarChartFunction2");
+      block1MatplotlibBarChartFunction1.style.display = "block"
+      block1MatplotlibBarChartFunction2.style.display = "block"
+    }
+    
 
     function spanfunction() {
       block1();
       block2();
       block3();
       block4();
+      subFunctionHide();
     }
   </script>
   <body onLoad="spanfunction()">
@@ -304,11 +351,23 @@
                   value="Head"
                 />
                 <ul class="dropdown-menu">
-                  <li id="Head">Head</li>
-                  <li id="Tail">Tail</li>
-                  <li id="Index">Index</li>
-                  <li id="Info">Info</li>
-                  <li id="Describe">Describe</li>
+                  <li id="Head" onClick="subFunctionHide(); block1PandasHeadFunctionShow();">Head</li>
+                  <li id="Tail" onClick="subFunctionHide(); block1PandasTailFunctionShow();">Tail</li>
+                  <li id="Index" onClick="subFunctionHide();">Index</li>
+                  <li id="Columns" onClick="subFunctionHide();">Columns</li>
+                  <li id="Info" onClick="subFunctionHide();">Info</li>
+                  <li id="Mean(X axis)" onClick="subFunctionHide();">Mean(X axis)</li>
+                  <li id="Mean(Y axis)" onClick="subFunctionHide();">Mean(Y axis)</li>
+                  <li id="Dtypes" onClick="subFunctionHide();">Dtypes</li>
+                  <li id="Describe" onClick="subFunctionHide();">Describe</li>
+                  <li id="Shape" onClick="subFunctionHide();">Shape</li>
+                  <li id="Size" onClick="subFunctionHide();">Size</li>
+                  <li id="Isnull" onClick="subFunctionHide();">Isnull</li>
+                  <li id="Isnull (Sum)" onClick="subFunctionHide();">Isnull (Sum)</li>
+                  <li id="Isna" onClick="subFunctionHide();">Isna</li>
+                  <li id="Sample" onClick="subFunctionHide(); block1PandasSampleFunctionShow();">Sample</li>
+                  <li id="Nunique" onClick="subFunctionHide();">Nunique</li>
+                  <li id="Memory Usage" onClick="subFunctionHide();">Memory Usage</li>
                 </ul>
               </div>
             </div>
@@ -337,7 +396,9 @@
                   value="fun1"
                 />
                 <ul class="dropdown-menu">
-                  <li id="male">fun1</li>
+                  <li id="SimpleLinePlot" onClick="subFunctionHide();block1MatplotlibLinePlotFunction1Show();block1MatplotlibLinePlotFunction2Show();">SimpleLinePlot</li>
+                  <li id="BarChart" onClick="subFunctionHide();block1MatplotlibBarChartFunctionShow();">BarChart</li>
+
                   <li id="female">fun2</li>
                 </ul>
               </div>
@@ -354,7 +415,7 @@
                   value="fun1"
                 />
                 <ul class="dropdown-menu">
-                  <li id="male">fun1</li>
+                  <li id="Lineplot" onClick="subFunctionHide();">Lineplot</li>
                   <li id="female">fun2</li>
                 </ul>
               </div>
@@ -378,16 +439,107 @@
             </div>
             <!--############################# BLOCK 1 FUNCTIONS END #########################-->
 
+            <!-- BLOCK 1 SUB PANDAS FUNCTIONS -->
+
+            <!-- Head Function -->
+            <div class="form-floating" id="block1PandasHeadFunction">
+              <input type="number" value="0" name="block1PandasHeadFunction" style="width:200px; margin: 5%; margin-top: 0%;" class="form-control" id="floatingPassword" placeholder="Head Count ">
+              <label for="floatingPassword">Head Count (Optional) </label>
+            </div>
+
+            <!-- Tail Function -->
+            <div class="form-floating" id="block1PandasTailFunction">
+              <input type="number" value="0" name="block1PandasTailFunction" style="width:200px; margin: 5%; margin-top: 0%;" class="form-control" id="floatingPassword" placeholder="Tail Count ">
+              <label for="floatingPassword">Tail Count (Optional) </label>
+            </div>
+
+            <!-- Sample Function -->
+            <div class="form-floating" id="block1PandasSampleFunction">
+              <input type="number" value="0" name="block1PandasSampleFunction" style="width:200px; margin: 5%; margin-top: 0%;" class="form-control" id="floatingPassword" placeholder="Tail Count ">
+              <label for="floatingPassword">Sample Count </label>
+            </div>
+
+        
+
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%% BLOCK 1 SUB PANDAS FUNCTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+            
+            <!-- BLOCK 1 SUB MATPLOTLIB FUNCTIONS -->
+
+            <!-- Sample Line Plot Fuction -->
+            <div class="form-floating" id="block1MatplotlibLinePlotFunction1">
+              <input type="text"  name="block1MatplotlibLinePlotFunction1" style="width:250px; margin: 5%; margin-top: 0%;" class="form-control" id="floatingPassword" placeholder="Coloumn(Continous data) ">
+              <label for="floatingPassword">Coloumn(Continous data) </label>
+            </div>
+            <div class="form-floating" id="block1MatplotlibLinePlotFunction2">
+              <input type="text"  name="block1MatplotlibLinePlotFunction2" style="width:250px; margin: 5%; margin-top: 0%;" class="form-control" id="floatingPassword" placeholder="Coloumn(Continous data) ">
+              <label for="floatingPassword">Coloumn(Continous data) </label>
+            </div>
+
+            <!-- Bar Chart Fuction -->
+            <div class="form-floating" id="block1MatplotlibBarChartFunction1">
+              <input type="text"  name="block1MatplotlibBarChartFunction1" style="width:250px; margin: 5%; margin-top: 0%;" class="form-control" id="floatingPassword" placeholder="Coloumn(Continous data) ">
+              <label for="floatingPassword">Coloumn(Continous data) </label>
+            </div>
+            <div class="form-floating" id="block1MatplotlibBarChartFunction2">
+              <input type="text"  name="block1MatplotlibBarChartFunction2" style="width:250px; margin: 5%; margin-top: 0%;" class="form-control" id="floatingPassword" placeholder="Coloumn(Continous data) ">
+              <label for="floatingPassword">Coloumn(Continous data) </label>
+            </div>
+
+
+            <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%% BLOCK 1 SUB MATPLOTLIB FUNCTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
           </div>
-          <p class="card-text" style="margin-left: 3%">
+          <div class="card-text" style="margin-left: 3%">
             {% if block1Function == 'Head' %} 
               {{ block1 | safe }} 
+
+            {% elif block1Function == 'Tail' %}  
+              {{ block1 | safe }} 
+            {% elif block1Function == 'Lineplot' %}  
+              <img src='data:image/png;base64,{{ block1 }}'/>
+            {% elif block1Function == 'Describe' %}  
+              {{ block1 | safe }} 
+            {% elif block1Function == 'Sample' %}  
+              {{ block1 | safe }}   
+
+            {% elif block1Function == 'SimpleLinePlot' %}  
+              <img src='data:image/png;base64,{{ block1 }}'/>
+            {% elif block1Function == 'SimpleLinePlot2' %}  
+              <img src='data:image/png;base64,{{ block1 }}'/>
+            {% elif block1Function == 'BarChart' %}  
+              <img src='data:image/png;base64,{{ block1 }}'/>
+        
+              {% elif block1Function == 'Isnull' %}  
+              {{ block1 | safe }}
+            {% elif block1Function == 'IsnullSum' %}  
+              <pre>{{ block1 }}</pre> 
+            {% elif block1Function == 'Nunique' %}  
+              <pre>{{ block1 }}</pre> 
+            {% elif block1Function == 'Isna' %}  
+              <pre>{{ block1 }}</pre> 
+            {% elif block1Function == 'MemoryUsage' %}  
+              <pre>{{ block1 }}</pre>   
+            {% elif block1Function == 'Info' %}  
+              {{ block1 | safe }}   
+            {% elif block1Function == 'MeanX' %} 
+              <pre>{{ block1 }}</pre>
+            {% elif block1Function == 'MeanY' %} 
+              <pre>{{ block1 }}</pre>
+            {% elif block1Function == 'Dtypes' %} 
+              <pre>{{ block1 }}</pre>
             {% elif block1Function == 'Index' %} 
+              {{ block1 }}  
+            {% elif block1Function == 'Error' %} 
               {{ block1 }} 
+            {% elif block1Function == 'Size' %} 
+              {{ block1 }}
+            {% elif block1Function == 'Shape' %} 
+              {{ block1 }}          
+            {% elif block1Function == 'Columns' %} 
+              {{ block1 }}   
             {% else %} 
               OUTPUT 
             {% endif %}
-          </p>
+          </div>
         </div>
       </div>
       <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& BLOCK 1 END &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
@@ -787,7 +939,7 @@
         </div>
         <button class="btn btn-primary" style="margin-top: 3%">New -></button>
       </div>
-      <div class="card-footer text-muted">2 days ago</div>
+      <div class="card-footer text-muted">subset 1</div>
     </div>
     <button
       class="btn btn-primary"

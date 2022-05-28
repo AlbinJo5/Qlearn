@@ -77,7 +77,6 @@ def signup(request):
         email = request.POST.get('email')
         psw = request.POST.get('psw')
         cpsw = request.POST.get('cpsw')
-        # TODO username check
         if psw == cpsw:
             try:
                 auth.create_user_with_email_and_password(email,psw)
@@ -149,8 +148,10 @@ def work(request,user,dfName):
 
         if block1 == 'Pandas':
             function = request.POST.get('block1PandasFunctions')
+
             if function == 'Head':
-                df1.Head()
+                headValue = request.POST.get('block1PandasHeadFunction') 
+                df1.Head(int(headValue))
                 context.update({'block1': df1.Head})
                 context.update({'block1Function': 'Head'})
 
@@ -159,11 +160,141 @@ def work(request,user,dfName):
                 context.update({'block1': df1.Index})    
                 context.update({'block1Function': 'Index'})
 
+            elif function == 'Tail':
+                headValue = request.POST.get('block1PandasTailFunction') 
+                df1.Tail(int(headValue))
+                context.update({'block1': df1.Tail})
+                context.update({'block1Function': 'Tail'})
+
+            elif function == 'Sample':
+                headValue = request.POST.get('block1PandasSampleFunction') 
+                df1.Sample(int(headValue))
+                context.update({'block1': df1.Sample})
+                context.update({'block1Function': 'Sample'})    
+
+            elif function == 'Describe':
+                df1.Describe()
+                context.update({'block1': df1.Describe})
+                context.update({'block1Function': 'Describe'})
+
+            elif function == 'Info':
+                df1.Info()
+                context.update({'block1': df1.Info})
+                context.update({'block1Function': 'Info'})     
+
+            elif function == 'Columns':
+                df1.Columns()
+                context.update({'block1': df1.Columns})
+                context.update({'block1Function': 'Columns'})
+
+            elif function == 'Mean(X axis)':
+                df1.Mean(0)
+                context.update({'block1': df1.Mean})
+                context.update({'block1Function': 'MeanX'})
+
+            elif function == 'Mean(Y axis)':
+                df1.Mean(1)
+                context.update({'block1': df1.Mean})
+                context.update({'block1Function': 'MeanY'})
+
+            elif function == 'Dtypes':
+                df1.Dtypes()
+                context.update({'block1': df1.Dtypes})
+                context.update({'block1Function': 'Dtypes'})
+
+            elif function == 'Size':
+                df1.Size()
+                context.update({'block1': df1.Size})
+                context.update({'block1Function': 'Size'})
+
+            elif function == 'Shape':
+                df1.Shape()
+                context.update({'block1': df1.Shape})
+                context.update({'block1Function': 'Shape'})    
+
+            elif function == 'Isnull':
+                df1.Isnull()
+                context.update({'block1': df1.Isnull})
+                context.update({'block1Function': 'Isnull'}) 
+
+            elif function == 'Isnull (Sum)':
+                df1.IsnullSum()
+                context.update({'block1': df1.IsnullSum})
+                context.update({'block1Function': 'IsnullSum'})     
+
+            elif function == 'Isna':
+                df1.Isna()
+                context.update({'block1': df1.Isna})
+                context.update({'block1Function': 'Isna'})     
+
+            elif function == 'Nunique':
+                df1.Nunique()
+                context.update({'block1': df1.Nunique})
+                context.update({'block1Function': 'Nunique'})
+
+            elif function == 'Memory Usage':
+                df1.MemoryUsage()
+                context.update({'block1': df1.MemoryUsage})
+                context.update({'block1Function': 'MemoryUsage'})             
+
+        elif block1 == 'Seaborn':
+            function = request.POST.get('block1SeabornFunctions')
+
+            if(function == 'Lineplot'):
+                df1.Lineplot('loan_amount','applicant_income')
+                context.update({'block1': df1.graph})
+                context.update({'block1Function': 'Lineplot'})    
         
+
+        elif block1 == 'Matplotlib':
+            function = request.POST.get('block1MatplotlibFunctions')
+
+            if(function == 'SimpleLinePlot'):
+
+                column1 = request.POST.get('block1MatplotlibLinePlotFunction1')
+                column2 = request.POST.get('block1MatplotlibLinePlotFunction2')
+
+                try:
+                    if(column1 and column2):
+                        df1.SimpleLinePlot2(column1,column2)
+                        context.update({'block1': df1.SimpleLinePlot2})
+                        context.update({'block1Function': 'SimpleLinePlot2'})   
+                    elif(column1):
+                        df1.SimpleLinePlot(column1)
+                        context.update({'block1': df1.SimpleLinePlot})
+                        context.update({'block1Function': 'SimpleLinePlot'})  
+                    elif(column2):
+                        df1.SimpleLinePlot(column2)
+                        context.update({'block1': df1.SimpleLinePlot})
+                        context.update({'block1Function': 'SimpleLinePlot'}) 
+                    else:
+                        context.update({'block1': "The column chosen is invalid"})
+                        context.update({'block1Function': 'Error'})   
+                except:
+                    context.update({'block1': "The column chosen is invalid"})
+                    context.update({'block1Function': 'Error'}) 
+
+            if(function == 'BarChart'):
+
+                column1 = request.POST.get('block1MatplotlibBarChartFunction1')
+                column2 = request.POST.get('block1MatplotlibBarChartFunction2')
+
+                try:
+                    df1.BarChart(column1,column2)
+                    context.update({'block1': df1.BarChart})
+                    context.update({'block1Function': 'BarChart'}) 
+                except:
+                    context.update({'block1': "The column chosen is invalid"})
+                    context.update({'block1Function': 'Error'})        
+
+            
+
+    
+
+
         context.update({'block2': block2})
         context.update({'block3': block3})
         context.update({'block4': block4})
-        context.update({'block1span': block1})
         context.update({'block2span': block2})
         context.update({'block3span': block3})
         context.update({'block4span': block4})
